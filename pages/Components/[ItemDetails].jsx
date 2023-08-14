@@ -10,9 +10,8 @@ const ItemDetails = () => {
 
   const router =useRouter();
 
+  // '+' sign for type conversion 
   const itemNo = +router.query.ItemDetails;
-
-  console.log(typeof(itemNo));
 
   if (!router.isFallback && !itemNo) {
     return <Error statusCode={404} />
