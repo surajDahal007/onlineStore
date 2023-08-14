@@ -4,6 +4,7 @@ import styles from "@/styles/ItemDetails.module.css"
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { storeProduct } from './Item'
+import Error from 'next/error'
 
 const ItemDetails = () => {
 
@@ -12,6 +13,10 @@ const ItemDetails = () => {
   const itemNo = +router.query.ItemDetails;
 
   console.log(typeof(itemNo));
+
+  if (!router.isFallback && !itemNo) {
+    return <Error statusCode={404} />
+  }
 
   return (
     <>
