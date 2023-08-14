@@ -9,7 +9,9 @@ const ItemDetails = () => {
 
   const router =useRouter();
 
-  const itemNo = router.query.ItemDetails;
+  const itemNo = +router.query.ItemDetails;
+
+  console.log(typeof(itemNo));
 
   return (
     <>
